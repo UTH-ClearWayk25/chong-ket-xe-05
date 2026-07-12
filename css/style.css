@@ -204,3 +204,43 @@ canvas { display: block; width: 100%; height: auto; background-color: #e2e8f0; }
 .btn-green-solid:hover, .btn-green-outline:hover {
   background: #0f766e;
 }
+/* ===== ĐOẠN CODE FIX GIAO DIỆN TRÊN ĐIỆN THOẠI (RESPONSIVE) ===== */
+@media (max-width: 768px) {
+  /* 1. Chuyển bố cục từ hàng ngang thành hàng dọc */
+  .dashboard-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* 2. Cho Menu (Sidebar) dàn đều hết chiều rộng hàng trên */
+  .sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding: 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  /* Thay đổi khoảng cách nav-item cho gọn trên điện thoại */
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+  }
+  
+  /* 3. Cho phần Nội dung chính (Dashboard) rớt xuống dưới và phóng to 100% */
+  .main-content {
+    width: 100% !important;
+    padding: 15px !important;
+    box-sizing: border-box;
+  }
+  
+  /* Đảm bảo khung chứa ảnh co giãn full màn hình điện thoại */
+  .chart-box {
+    width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    box-sizing: border-box;
+  }
+}
